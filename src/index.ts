@@ -36,6 +36,7 @@ router.get('/echo/:id', function(req, res) {
 
 router.post('/sum/', function (req, res) { 
     let mass=req.body.numbers;
+    console.log("mass type is "+typeof(mass));
     //mass=mass.slice(1, mass.length-1);
     mass=mass.substring(1, mass.length-1);
     let arr=mass.split(',').map(Number);
