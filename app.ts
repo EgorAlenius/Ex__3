@@ -57,8 +57,6 @@ app.post('/sum/', function (req, res) {
     for (let i=0; i<arr.length; i++){
         sum+=Number(arr[i]);
     }
-    
-    console.log(sum);
     res.send({"sum":sum});
 });
 
