@@ -1,6 +1,5 @@
 import {Request, Response, Router} from "express"
 import fs from "fs"
-//import { compile } from "morgan"
 
 const router: Router = Router()
 
@@ -37,7 +36,8 @@ router.get('/echo/:id', function(req, res) {
 
 router.post('/sum/', function (req, res) { 
     let mass=req.body.numbers;
-    mass=mass.slice(1, mass.length-1);
+    //mass=mass.slice(1, mass.length-1);
+    mass=mass.substring(1, mass.length-1);
     let arr=mass.split(',').map(Number);
     let sum=0;
     for (let i=0; i<arr.length; i++){
