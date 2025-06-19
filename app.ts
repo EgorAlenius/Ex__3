@@ -35,9 +35,7 @@ app.use(morgan("dev"))
 
 
 app.get('/hello', function(req, res) {
-	res.send({
-        msg: "Hello world!"
-    });
+	res.send({msg: "Hello world!"});
 });
 
 app.get('/echo/:id', function(req, res) {
