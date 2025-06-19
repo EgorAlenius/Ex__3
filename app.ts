@@ -40,17 +40,11 @@ app.get('/hello', function(req, res) {
     });
 });
 
-
-/* app.get('/echo/:id', function(req, res) {
-	res.send({
-        id: "dog"
-    });
-}); */
-
 app.get('/echo/:id', function(req, res) {
-    console.log(req.header);
+    
+    console.log(req.url.slice(6));
 	res.send({
-        id: "dog"
+        id:req.url.slice(6)
     });
 });
 
