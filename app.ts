@@ -1,14 +1,23 @@
 import express, {Express} from "express";
 import path from "path";
 import morgan from "morgan"
-import fs from "fs"
+//import fs from "fs"
+import router from "./src/index"
 
-// Create type
-type TUsers = {
+const app: Express = express();
+const port = 3000;
+
+app.use('/', express.static(path.join(__dirname, '../public')));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(morgan("dev"))
+app.use("/", router)
+
+/* type TUsers = {
     name : string;
     email : string;
 };
-// Create users empty list
+
 let users: TUsers [] = []
 
 fs.readFile("data/users.json", "utf8", (err: NodeJS.ErrnoException | null, data: string) => {
@@ -24,23 +33,11 @@ fs.readFile("data/users.json", "utf8", (err: NodeJS.ErrnoException | null, data:
     }
 })
 
-
-const app: Express = express();
-const port = 3000;
-
-app.use('/', express.static(path.join(__dirname, '../public')));
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-app.use(morgan("dev"))
-
-
 app.get('/hello', function(req, res) {
 	res.send({msg: "Hello world!"});
 });
 
 app.get('/echo/:id', function(req, res) {
-    
-    console.log(req.url.slice(6));
 	res.send({
         id:req.url.slice(6)
     });
@@ -75,7 +72,7 @@ app.post('/users/', function requestHandler(req, res) {
 
 app.get('/users', function(req, res) {
     res.status(201).send(users);
-});
+}); */
 
 app.listen(port, ()=>{
     console.log(`Server running on port ${port}`)
