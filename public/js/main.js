@@ -23,7 +23,7 @@ submitButton.addEventListener("click", async () => {
     document.getElementById("submitButton").disabled = false
 })
 
-const addPoemButtonFromAPI = document.getElementById("getUserButton")
+const addPoemButtonFromAPI = document.getElementById("getUser")
 addPoemButtonFromAPI.addEventListener("click", async function () {
 
     const usersData = await fetch("http://localhost:3000/users")
