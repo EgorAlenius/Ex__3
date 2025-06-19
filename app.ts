@@ -78,8 +78,6 @@ app.post('/users/', function requestHandler(req, res) {
 });
 
 app.get('/users', function(req, res) {
-	//res.send(users);
-    //res.status(201).json(users);
     res.status(201).send(users);
 });
 
