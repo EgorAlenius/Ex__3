@@ -41,7 +41,14 @@ app.get('/hello', function(req, res) {
 });
 
 
+/* app.get('/echo/:id', function(req, res) {
+	res.send({
+        id: "dog"
+    });
+}); */
+
 app.get('/echo/:id', function(req, res) {
+    console.log(req.header);
 	res.send({
         id: "dog"
     });
