@@ -35,14 +35,21 @@ router.get('/echo/:id', function(req, res) {
 
 
 router.post('/sum/', function (req, res) { 
-    let mass: string 
+    /* let mass: string 
     mass=req.body.numbers.toString()
     mass=mass.substring(1, mass.length-1);
 
     let arr: number [] =[]
     arr=mass.split(',').map(Number);
 
-    let sum: number =0;
+    let sum: number =0; */
+    let mass=req.body.numbers.toString()
+    console.log(mass)
+    mass=mass.substring(1, mass.length-1);
+
+    let arr=mass.split(',').map(Number);
+
+    let sum =0; 
 
     for (let i=0; i<arr.length; i++){
         sum+=Number(arr[i]);
