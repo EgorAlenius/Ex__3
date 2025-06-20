@@ -2,11 +2,11 @@
 const submitButton = document.getElementById("submitButton")
 submitButton.addEventListener("click", async () => {
 
-    const userName = document.getElementById("userName");
-    const userEmail = document.getElementById("userEmail");
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
     const person = {
-        "name": userName.value,
-        "email": userEmail.value
+        "name": name.value,
+        "email": email.value
     };
 
     const userData = await fetch("http://localhost:3000/users", {
