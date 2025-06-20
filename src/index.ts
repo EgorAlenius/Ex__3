@@ -35,12 +35,14 @@ router.get('/echo/:id', function(req, res) {
 
 
 router.post('/sum/', function (req, res) { 
-    let mass=req.body.numbers.toString();
-    //console.log("mass type is "+typeof(mass));
-    //mass=mass.slice(1, mass.length-1);
+    let mass: string =req.body.numbers.toString()
     mass=mass.substring(1, mass.length-1);
-    let arr=mass.split(',').map(Number);
-    let sum=0;
+
+    let arr: number [] =[]
+    arr=mass.split(',').map(Number);
+
+    let sum: number =0;
+
     for (let i=0; i<arr.length; i++){
         sum+=Number(arr[i]);
     }
@@ -51,7 +53,7 @@ router.post('/users/', function requestHandler(req, res) {
 
     res.send(req.body);
     users.push(req.body)
-    console.log(users);
+    console.log("Added user: "+users);
 
     fs.writeFile("data/users.json", JSON.stringify(users), (err: NodeJS.ErrnoException | null) => {
         if (err) {
@@ -59,6 +61,7 @@ router.post('/users/', function requestHandler(req, res) {
             return
         }
         res.json(users)
+        res.send({message: "User successfully added"})
     }) 
 });
 
