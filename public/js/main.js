@@ -18,12 +18,12 @@ submitButton.addEventListener("click", async () => {
     })
     const responceFromUser = await userData.json()
     console.log(responceFromUser)
-    userName.value = ""
-    userEmail.value = ""
-    document.getElementById("submitButton").disabled = false
+    name.value = ""
+    email.value = ""
+    //document.getElementById("submitButton").disabled = false
 })
 
-const addPoemButtonFromAPI = document.getElementById("getUser")
+const addPoemButtonFromAPI = document.getElementById("getUsers")
 addPoemButtonFromAPI.addEventListener("click", async function () {
 
     const usersData = await fetch("http://localhost:3000/users")

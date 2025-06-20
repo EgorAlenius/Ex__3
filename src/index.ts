@@ -35,7 +35,8 @@ router.get('/echo/:id', function(req, res) {
 
 
 router.post('/sum/', function (req, res) { 
-    let mass: string =req.body.numbers.toString()
+    let mass: string 
+    mass=req.body.numbers.toString()
     mass=mass.substring(1, mass.length-1);
 
     let arr: number [] =[]
